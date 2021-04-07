@@ -7,28 +7,38 @@ import java.util.logging.Logger;
 class Truck implements Runnable{
     public static int mobileInTruck= 0;
     public static int truckCapacity;
-     
+    private Factory factory ;
+
+    public void setFactory(Factory factory) {
+        this.factory = factory;
+    }
+
+
+    
 
     public Truck( int truckCapacity) {
-        Thread t= new Thread(this);
-        t.start();
+
         this.truckCapacity = truckCapacity;
     }
   
-    public synchronized void takeMobile() throws InterruptedException{
+    public  void takeMobile() throws InterruptedException{
+        synchronized(factory){
         while(true){
             if(this.mobileInTruck==0 && Factory.mobileInFactory >=truckCapacity){
                 Factory.mobileInFactory-= this.truckCapacity;
                 this.mobileInTruck = this.truckCapacity;
                 System.out.println("mobile taken");
-                notifyAll();
+                factory.notifyAll();
             }
             else{ 
-                System.out.println("procuction occuting");
-                wait(); 
+                System.out.println("procuction occuring");
+                factory.wait(); 
                 
-            this.mobileInTruck=0;
-            System.out.println("got mobile"); }
+                this.mobileInTruck=0;
+                System.out.println("got mobile");
+            }
+        }
+        
         }
             
 }
@@ -45,38 +55,44 @@ class Truck implements Runnable{
 public class Factory implements Runnable {
     public static int mobileInFactory=0;
     public static int capacity;
-    
+    private Truck truck;
+
+    public void setTruck(Truck truck) {
+        this.truck = truck;
+    }
+
+
 
         public Factory(int capacity) {
             this.capacity = capacity;
             
-            Thread t= new Thread(this);
-            t.start();
+
         }
     
-    public synchronized void produceMobile() throws InterruptedException{
-        
+    public  void produceMobile() throws InterruptedException{
+        synchronized(truck){
             while(true){
 
                 if(mobileInFactory >=Truck.truckCapacity){
                  //   System.out.println("truck capacity "+Truck.truckCapacity+" fullfiled");
-                    System.out.println("sending notification");   
-                 notifyAll();
+                System.out.println("sending notification");   
+                 truck.notify();
                 }
                 
                 if(this.mobileInFactory==this.capacity){
                     System.out.println("capacity full");
                     
-                    wait();
+                    truck.wait();
                     System.out.println("mobile taken");
                 }                
                 else{
-                    System.out.println("production increased to " +( mobileInFactory+1));
+                    
                     this.mobileInFactory++;
                     Thread.sleep(200);
+                    System.out.println("production increased to " + mobileInFactory);
                 }
             
-                
+            }      
         }
     }
     @Override
@@ -93,6 +109,12 @@ class Main{
     public static void main(String[] args) {
         Factory factory = new Factory(5);
         Truck truck =  new Truck(4);
-        
+        factory.setTruck(truck);
+        truck.setFactory(factory);
+        Thread tfac= new Thread(factory, "factory");
+        tfac.start();        
+        Thread t= new Thread(truck, "truck");
+        t.start();
+      
     }
 }
