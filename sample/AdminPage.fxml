@@ -26,7 +26,7 @@
                 <Font size="16.0" />
             </font>
         </Text>
-        <TextField layoutX="315.0" layoutY="39.0" prefHeight="27.0" prefWidth="197.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
+        <TextField fx:id="TfBus1Desc" layoutX="315.0" layoutY="39.0" prefHeight="27.0" prefWidth="197.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
         <Text layoutX="391.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" AnchorPane.leftAnchor="391.0" AnchorPane.topAnchor="18.0">
             <font>
                 <Font size="16.0" />
@@ -52,15 +52,15 @@
                 <Font size="16.0" />
             </font>
         </Text>
-        <TextField layoutX="98.0" layoutY="118.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="118.0" />
-        <TextField layoutX="98.0" layoutY="200.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="200.0" />
-        <TextField layoutX="98.0" layoutY="351.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="351.0" />
-        <TextField layoutX="98.0" layoutY="275.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="275.0" />
-        <TextField layoutX="307.0" layoutY="118.0" prefHeight="27.0" prefWidth="214.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
-        <TextField layoutX="314.0" layoutY="200.0" prefHeight="27.0" prefWidth="207.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
-        <TextField layoutX="314.0" layoutY="275.0" prefHeight="27.0" prefWidth="207.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
-        <TextField layoutX="311.0" layoutY="351.0" prefHeight="27.0" prefWidth="214.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
-        <Button layoutX="263.0" layoutY="412.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="save">
+        <TextField fx:id="TfBus2Tickets" layoutX="98.0" layoutY="118.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="118.0" />
+        <TextField fx:id="TfBus3Tickets" layoutX="98.0" layoutY="200.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="200.0" />
+        <TextField fx:id="TfBus5Tickets" layoutX="98.0" layoutY="351.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="351.0" />
+        <TextField fx:id="TfBus4Tickets" layoutX="98.0" layoutY="275.0" prefHeight="27.0" prefWidth="112.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" AnchorPane.leftAnchor="98.0" AnchorPane.topAnchor="275.0" />
+        <TextField fx:id="TfBus2Desc" layoutX="307.0" layoutY="118.0" prefHeight="27.0" prefWidth="214.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
+        <TextField fx:id="TfBus3Desc" layoutX="314.0" layoutY="200.0" prefHeight="27.0" prefWidth="207.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
+        <TextField fx:id="TfBus4Desc" layoutX="314.0" layoutY="275.0" prefHeight="27.0" prefWidth="207.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
+        <TextField fx:id="TfBus5Desc" layoutX="311.0" layoutY="351.0" prefHeight="27.0" prefWidth="214.0" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0000FF; -fx-background-color: transparent;" />
+        <Button fx:id="btnSaveAdmin" layoutX="263.0" layoutY="412.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="save">
             <font>
                 <Font size="14.0" />
             </font>

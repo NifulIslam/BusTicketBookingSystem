@@ -1,13 +1,25 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.*;
 
 public class LogInPage {
+    @FXML
+    private TextField LogIntfUserName;
+
+    @FXML
+    private PasswordField LogIntfPassword;
+    @FXML
+    private Label LogInLabelNotifi;
+
     public User userInLogin;
     private FileInputStream fis  ;
     private ObjectInputStream ois  ;
@@ -30,26 +42,38 @@ public class LogInPage {
         Stage stage =Main.stage;
         Parent root = null;
         getUser();
-        System.out.println("login page: "+userInLogin.type);
-        System.out.println(userInLogin.type.equals("admin"));
         if(userInLogin.type.equals("admin")) {
-            try {
-                root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (AdminHandle.isValidUser(LogIntfUserName.getText(), LogIntfPassword.getText())) {
+                try {
+                    root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage.setScene(new javafx.scene.Scene(root));
+                stage.show();
             }
-            stage.setScene(new javafx.scene.Scene(root));
-            stage.show();
-        }
-        else  {
-            try {
-                root = FXMLLoader.load(getClass().getResource("UserPage.fxml"));
-            } catch (IOException e) {
-                e.printStackTrace();
+            else{
+                LogInLabelNotifi.setText("invalid username or password");
             }
-            stage.setScene(new javafx.scene.Scene(root));
-            stage.show();
         }
+
+        else {
+
+            if (NewUserHandle.isValidUser(LogIntfUserName.getText(), LogIntfPassword.getText())) {
+
+                try {
+                    root = FXMLLoader.load(getClass().getResource("UserPage.fxml"));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                stage.setScene(new javafx.scene.Scene(root));
+                stage.show();
+            }
+            else{
+                LogInLabelNotifi.setText("invalid username or password");
+            }
+        }
+
 
     }
 }

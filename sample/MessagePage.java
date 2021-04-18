@@ -42,16 +42,16 @@ public class MessagePage {
         }
 
 
-    else{
-        Stage stage = Main.stage;
-        Parent root = null;
-        try {
-            root = FXMLLoader.load(getClass().getResource("UserPage.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
+        else{
+            Stage stage = Main.stage;
+            Parent root = null;
+            try {
+                root = FXMLLoader.load(getClass().getResource("UserPage.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.show();
         }
-        stage.setScene(new javafx.scene.Scene(root));
-        stage.show();
-    }
     }
 }

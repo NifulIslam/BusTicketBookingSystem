@@ -1,0 +1,5 @@
+user1 pass 0 0 0 0 0
+user2 1234 0 0 0 0 0
+
+user3 pass 0 0 0 0 0
+user4 pass 0 0 0 0 0

@@ -65,7 +65,7 @@
                 <Font size="14.0" />
             </font>
         </Button>
-        <Text layoutX="626.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Name" />
+        <Text fx:id="UserPageLabelName" layoutX="626.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Name" />
         <Text layoutX="418.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buy" wrappingWidth="55.0">
             <font>
                 <Font size="16.0" />

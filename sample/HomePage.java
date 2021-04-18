@@ -19,7 +19,7 @@ public class HomePage {
     private ObjectOutputStream oos ;
     private   void setUser(String type){
         this.user.type= type;
-                try {
+        try {
             fos = new FileOutputStream("G:\\spring 211\\advanced oop\\src\\sample\\UserInfo.txt");
             oos = new ObjectOutputStream(fos);
             oos.writeObject(user);
