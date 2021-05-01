@@ -1,0 +1,8 @@
+admin2: hi
+admin1: hellow
+admin1: how do you do
+admin2: good
+admin1: random text
+admin2: random text from me too
+admin1: testing 1 2 3
+admin1: reseting

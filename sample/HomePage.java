@@ -14,9 +14,10 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 
 public class HomePage {
-    public  User user= new User("admin");
+    public  static User user= new User("admin");
     private  FileOutputStream fos ;
     private ObjectOutputStream oos ;
+
     private   void setUser(String type){
         this.user.type= type;
         try {
@@ -56,7 +57,7 @@ public class HomePage {
 
     public void btnAdminAction(javafx.event.ActionEvent actionEvent) {
 
-        setUser("admin");
+       // setUser("admin");
         Stage stage =Main.stage;
         Parent root = null;
         try {
@@ -70,7 +71,7 @@ public class HomePage {
 
     public void btnSignUpAction(javafx.event.ActionEvent actionEvent) {
         Stage stage =Main.stage;
-        setUser("consumer");
+        this.user= new User("consumer");
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("SignUpPage.fxml"));
@@ -82,7 +83,7 @@ public class HomePage {
     }
 
     public void btnUserAction(javafx.event.ActionEvent actionEvent) {
-        setUser("consumer");
+        this.user= new User("consumer");
 
         Stage stage =Main.stage;
         Parent root = null;

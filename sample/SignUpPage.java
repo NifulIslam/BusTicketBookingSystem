@@ -20,8 +20,10 @@ public class SignUpPage {
     @FXML
     private PasswordField signInPass;
     public void btnSignUpAction(ActionEvent actionEvent) {
-        if (NewUserHandle.isValidName(SignInName.getText())) {
+        String name= SignInName.getText();
+        if (NewUserHandle.isValidName(name)) {
             NewUserHandle.createNewUser(SignInName.getText(), signInPass.getText());
+            HomePage.user= new User (name, "consumer");
             Stage stage = Main.stage;
             Parent root = null;
             try {
@@ -35,6 +37,17 @@ public class SignUpPage {
         else{
             SignUpLabelNotifi.setText("username already taken");
         }
+    }
+    public void btnHomeActin(ActionEvent actionEvent) {
+        Stage stage =Main.stage;
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setScene(new javafx.scene.Scene(root));
+        stage.show();
     }
 
 }

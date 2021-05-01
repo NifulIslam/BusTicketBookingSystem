@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class CurrentUser {
-    private User user =new User();
+    public User user =new User();
     private FileOutputStream fos ;
     private ObjectOutputStream oos ;
 

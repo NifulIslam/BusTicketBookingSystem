@@ -36,14 +36,28 @@ public class LogInPage {
             System.out.println(e);
         }
     }
+    public void btnHomeActin(ActionEvent actionEvent) {
+        Stage stage =Main.stage;
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setScene(new javafx.scene.Scene(root));
+        stage.show();
+    }
 
 
     public void btnLogInActin(ActionEvent actionEvent) {
         Stage stage =Main.stage;
         Parent root = null;
         getUser();
-        if(userInLogin.type.equals("admin")) {
+
+        if(HomePage.user.type.equals("admin")) {
             if (AdminHandle.isValidUser(LogIntfUserName.getText(), LogIntfPassword.getText())) {
+
+                HomePage.user= new User(LogIntfUserName.getText(), "admin");
                 try {
                     root = FXMLLoader.load(getClass().getResource("AdminPage.fxml"));
                 } catch (IOException e) {
@@ -58,9 +72,13 @@ public class LogInPage {
         }
 
         else {
+            String name= LogIntfUserName.getText();
+            String pass= LogIntfPassword.getText();
 
-            if (NewUserHandle.isValidUser(LogIntfUserName.getText(), LogIntfPassword.getText())) {
-
+            if (NewUserHandle.isValidUser(name, pass)) {
+                HomePage.user= new User(name, "consumer");
+                CurrentUser c= new CurrentUser(userInLogin);
+                HomePage.user= new User(LogIntfUserName.getText(), "consumer");
                 try {
                     root = FXMLLoader.load(getClass().getResource("UserPage.fxml"));
                 } catch (IOException e) {

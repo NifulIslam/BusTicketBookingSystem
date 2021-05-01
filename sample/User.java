@@ -17,4 +17,12 @@ public class User implements Serializable {
 
     public User() {
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

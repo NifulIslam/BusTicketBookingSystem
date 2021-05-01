@@ -12,7 +12,15 @@ public class NewUserHandle {
             bw.write(data);
             bw.newLine();
             bw.close();
+            File file2 = new File("G:\\spring 211\\advanced oop\\src\\sample\\clientTickets.txt");
+            FileWriter fw = new FileWriter(file2,true);
+            BufferedWriter bw1= new BufferedWriter(fw);
+            String line= name +" _";
+            bw1.write(line+"\n");
+            bw1.close();
+
         }
+
         catch (IOException e){
             System.out.println("file not found");
         }
