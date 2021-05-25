@@ -21,7 +21,7 @@ public class SignUpPage {
     private PasswordField signInPass;
     public void btnSignUpAction(ActionEvent actionEvent) {
         String name= SignInName.getText();
-        if (NewUserHandle.isValidName(name)) {
+        if (NewUserHandle.isValidName(name)  && signInPass.getText().length()>3) {
             NewUserHandle.createNewUser(SignInName.getText(), signInPass.getText());
             HomePage.user= new User (name, "consumer");
             Stage stage = Main.stage;
@@ -35,7 +35,7 @@ public class SignUpPage {
             stage.show();
         }
         else{
-            SignUpLabelNotifi.setText("username already taken");
+            SignUpLabelNotifi.setText("username already taken or password too short");
         }
     }
     public void btnHomeActin(ActionEvent actionEvent) {

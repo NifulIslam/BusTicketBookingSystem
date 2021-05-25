@@ -21,8 +21,6 @@ public class UserPage implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setUserPageLabelName();
         Msg msg=  new Msg(msgArea);
-        ticketsTAusers.setEditable(false);
-
         new Tickets(ticketsTAusers);
     }
     @FXML

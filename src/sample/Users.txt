@@ -4,3 +4,4 @@ user3 pass 0 0 0 0 0
 user4 pass 0 0 0 0 0
 user5 pass1 0 0 0 0 0
 user6 pass 0 0 0 0 0
+user7 abcd 0 0 0 0 0

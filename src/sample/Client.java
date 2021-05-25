@@ -17,9 +17,13 @@ public class Client {
         oos.writeObject(ticket);
         if(((String)ois.readObject()).equals("ok")){
             socket.close();
+            ois.close();
+            oos.close();
             return true;
         }
         socket.close();
+        ois.close();
+        oos.close();
         return false;
 
 
