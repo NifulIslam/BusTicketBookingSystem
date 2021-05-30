@@ -22,6 +22,8 @@ public class Server {
                 oos.writeObject("no");
             }
             socket.close();
+            ois.close();
+            oos.close();
 
         }
     }

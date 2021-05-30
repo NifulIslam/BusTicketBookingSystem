@@ -1,8 +1,5 @@
-user1: hi
-user2: hi
-user3: hellow
-user1: how do you do
-user1: abcd
-user6: efgh
 user2: hellow cats
 user2: hi
+user7: hi, i am new user
+user2: hi
+user2: baught a ticket

@@ -107,14 +107,12 @@ public class TicketManager {
             msgArea.setText("");
             while ((line=br.readLine())!=null){
                 msgArea.appendText(line+"\n");
-
-
             }
             br.close();
 
         }
         catch (IOException e){
-
+            System.out.println("io exception !");
             e.printStackTrace();
         }
     }

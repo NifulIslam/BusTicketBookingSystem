@@ -6,7 +6,6 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Scanner;
 
 
 public class Client {
@@ -17,9 +16,13 @@ public class Client {
         oos.writeObject(ticket);
         if(((String)ois.readObject()).equals("ok")){
             socket.close();
+            ois.close();
+            oos.close();
             return true;
         }
         socket.close();
+        ois.close();
+        oos.close();
         return false;
 
 
